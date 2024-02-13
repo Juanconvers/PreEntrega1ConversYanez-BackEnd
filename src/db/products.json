@@ -1,17 +1,8 @@
 [
     {
-        "title": "Frijoles",
-        "description": "Sanas",
-        "price": 8000,
-        "stock": 80,
-        "code": "L123",
-        "thumbnail": [],
-        "id": "1747ea8e4b47e46934ba"
-    },
-    {
         "title": "Azucar",
         "description": "La sonrisa",
-        "price": 400,
+        "price": 5000,
         "stock": 14,
         "code": "A433",
         "thumbnail": [],
@@ -25,5 +16,14 @@
         "code": "Y266",
         "thumbnail": [],
         "id": "e4cf5156ce4036c39d2c"
+    },
+    {
+        "title": "Carnes rojas",
+        "description": "Calidad superior",
+        "price": 32000,
+        "stock": 26,
+        "code": "L1253",
+        "thumbnail": [],
+        "id": "7f12a93176d27ae4b34c"
     }
 ]
