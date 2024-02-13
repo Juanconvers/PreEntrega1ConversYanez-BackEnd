@@ -1,21 +1,12 @@
 [
     {
-        "title": "Lentejas",
+        "title": "Frijoles",
         "description": "Sanas",
-        "price": 1500,
-        "stock": 25,
+        "price": 8000,
+        "stock": 80,
         "code": "L123",
         "thumbnail": [],
         "id": "1747ea8e4b47e46934ba"
-    },
-    {
-        "title": "Yerba mate",
-        "description": "Del norte pa",
-        "price": 3000,
-        "stock": 22,
-        "code": "Y243",
-        "thumbnail": [],
-        "id": "e8d4db4bdedf152c83c2"
     },
     {
         "title": "Azucar",
@@ -25,5 +16,14 @@
         "code": "A433",
         "thumbnail": [],
         "id": "ed278bf2d3ebbc8b5af6"
+    },
+    {
+        "title": "Jugo Tuttifrutti",
+        "description": "Re-fresco",
+        "price": 200,
+        "stock": 18,
+        "code": "Y266",
+        "thumbnail": [],
+        "id": "e4cf5156ce4036c39d2c"
     }
 ]

@@ -57,12 +57,12 @@ app.post('/products', async (req, res) => {
         res.status(500).send(`Error interno del servidor - Al crear producto: ${error}`)
     }})
 
-app.put('/product/:pid', async (req, res) => {
+app.put('/products/:pid', async (req, res) => {
     try {
         const idProducto = req.params.pid
         const updateProduct = req.body
         const mensaje = await PRODUCTMANAGER.updateProduct(idProducto, updateProduct)
-            if (mensaje == "Producto actualizado exitosamente"){
+            if (mensaje == 'Producto actualizado exitosamente'){
                 res.status(200).send(mensaje)
             } else {
                 res.status(404).send(mensaje)

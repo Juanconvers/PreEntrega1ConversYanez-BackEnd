@@ -1,5 +1,6 @@
 
 import {promises as fs} from 'fs'
+import crypto from 'crypto'
 
 export class ProductManager {
     constructor(path) {
@@ -9,10 +10,11 @@ export class ProductManager {
     async addProduct(newProduct){
         const products = JSON.parse(await fs.readFile(this.path, 'utf-8'))
 
-        if(newProduct.code && newProduct.id && newProduct.title && newProduct.description && newProduct.price && newProduct.thumbnail && newProduct.stock){
+        if(newProduct.code && newProduct.title && newProduct.description && newProduct.price && newProduct.thumbnail && newProduct.stock){
             const indice = products.findIndex(product => product.code === newProduct.code)
             
             if(indice === -1){
+                newProduct.id = crypto.randomBytes(10).toString('hex')
                 products.push(newProduct);
                 await fs.writeFile(this.path, JSON.stringify(products))
                 return'Producto creado exitosamente'
@@ -32,11 +34,9 @@ export class ProductManager {
     async getProductsById(id){
         const products = JSON.parse(await fs.readFile(this.path, 'utf-8'))
         const product = products.find(product => product.id === id)
-        if(product){
+        
             return product
-        }else{
-            return 'El producto no existe'
-        } 
+       
     }
 
     async updateProduct(id, nuevoProducto){
