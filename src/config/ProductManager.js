@@ -10,13 +10,14 @@ export class ProductManager {
     async addProduct(newProduct){
         const products = JSON.parse(await fs.readFile(this.path, 'utf-8'))
 
-        if(newProduct.code && newProduct.title && newProduct.description && newProduct.price && newProduct.thumbnail && newProduct.stock){
+        if(newProduct.code && newProduct.title && newProduct.description && newProduct.price && newProduct.stock){
             const indice = products.findIndex(product => product.code === newProduct.code)
-            
-            if(indice === -1){
+            if (indice === -1) {
                 newProduct.id = crypto.randomBytes(10).toString('hex')
                 newProduct.status = true
-                products.push(newProduct);
+                if (!newProduct.thumbnail)
+                    newProduct.thumbnail = []
+                prods.push(newProduct)
                 await fs.writeFile(this.path, JSON.stringify(products))
                 return'Producto creado exitosamente'
             } else {

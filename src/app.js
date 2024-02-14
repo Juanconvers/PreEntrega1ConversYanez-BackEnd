@@ -3,6 +3,7 @@ import express from "express";
 import productsRouter from './routes/ProductsRouter.js';
 import { __dirname } from "./path.js";
 import upload from "./config/multer.js";
+import cartRouter from "./routes/cartRouter.js";
 
 console.log(__dirname)
 
@@ -13,7 +14,8 @@ app.use(express.json())
 app.use('/static', express.static(__dirname + '/public'))
 
 
-app.use('/products', productsRouter)
+app.use('/api/products', productsRouter)
+app.use('/api/cart', cartRouter)
 app.post('/upload', upload.single('product'), (req, res) => {
     try {
         console.log(req.file)
