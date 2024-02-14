@@ -17,11 +17,11 @@ app.use('/products', productsRouter)
 app.post('/upload', upload.single('product'), (req, res) => {
     try {
         console.log(req.file)
-        res.status(200).send("Imagen cargada correctamente")
+        res.status(200).send("Imagen subida correctamente")
     } catch (e) {
-        res.status(500).send("Error al cargar imagen")
+        res.status(500).send("Error al subir imagen")
     }
-})
+}) 
 
 app.listen(PORT,() => {
     console.log(`Server on port ${PORT}`)

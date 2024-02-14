@@ -15,6 +15,7 @@ export class ProductManager {
             
             if(indice === -1){
                 newProduct.id = crypto.randomBytes(10).toString('hex')
+                newProduct.status = true
                 products.push(newProduct);
                 await fs.writeFile(this.path, JSON.stringify(products))
                 return'Producto creado exitosamente'
@@ -33,10 +34,8 @@ export class ProductManager {
 
     async getProductsById(id){
         const products = JSON.parse(await fs.readFile(this.path, 'utf-8'))
-        const product = products.find(product => product.id === id)
-        
-            return product
-       
+        const product = products.find(product => product.id === id)   
+            return product 
     }
 
     async updateProduct(id, nuevoProducto){
